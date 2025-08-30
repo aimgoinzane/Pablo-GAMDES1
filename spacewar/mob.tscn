@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqfegfgwc0e0w"]
+
+[ext_resource type="Script" uid="uid://d2fs6jclgky7d" path="res://Assets/Scripts/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://btvtyrr2gbnpn" path="res://Assets/Sprites/zombie1.png" id="1_7k104"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7k104"]
+radius = 30.0167
+
+[node name="enemy1" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_4gyqm")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(0.260057, 0.263596)
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7k104")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
