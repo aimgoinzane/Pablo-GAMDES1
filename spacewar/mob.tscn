@@ -6,19 +6,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_7k104"]
 radius = 30.0167
 
-[node name="enemy1" type="RigidBody2D"]
+[node name="enemy1" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_4gyqm")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.90735e-06, 1.90735e-06)
 scale = Vector2(0.260057, 0.263596)
 texture = ExtResource("1_7k104")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7k104")
+metadata/_edit_group_ = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
